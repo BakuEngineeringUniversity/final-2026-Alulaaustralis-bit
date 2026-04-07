@@ -1,4 +1,6 @@
 fun main() {
+    System.setOut(java.io.PrintStream(System.out, true, "UTF-8"))
+
     val search = RecipeSearch()
 
     val r1 = VegetarianRecipe(
