@@ -5,6 +5,12 @@ class RecipeSearch {
         recipes.add(recipe)
     }
 
+    fun getAllRecipes(): List<Recipe> = recipes.toList()
+
+    fun clearRecipes() {
+        recipes.clear()
+    }
+
     fun search_by_ingredient(ingredient: String): List<Recipe> {
         return recipes.filter { recipe ->
             recipe.getIngredients().any { it.contains(ingredient, ignoreCase = true) }
