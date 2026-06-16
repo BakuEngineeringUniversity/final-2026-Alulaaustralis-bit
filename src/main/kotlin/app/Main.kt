@@ -85,7 +85,6 @@ fun main() {
                     println(it.describe())
                 }
             }
-
             "2" -> {
                 print("Name: ")
                 val name = readLine().orEmpty()
@@ -93,21 +92,17 @@ fun main() {
                     println(it.describe())
                 }
             }
-
             "3" -> {
                 search.getAllRecipes().forEach {
                     println(it.describe())
                 }
             }
-
             "4" -> {
                 currentCuisine = selectCuisine()
                 loadCuisine(currentCuisine)
             }
-
             "0" -> return
         }
-
         println()
     }
 }
@@ -120,21 +115,7 @@ fun selectCuisine(): CuisineType {
         4. America
         5. Other
     """.trimIndent())
+    print("Choice: ")
 
-    return when (readLine()?.trim()) {
-        "1" -> CuisineType.AZERBAIJANI
-        "2" -> CuisineType.ITALIAN
-        "3" -> CuisineType.CHINESE
-        "4" -> CuisineType.AMERICAN
-        "5" -> CuisineType.OTHER
-        else -> CuisineType.AZERBAIJANI
-    }
-}
-
-fun CuisineType.displayName(): String = when (this) {
-    CuisineType.AZERBAIJANI -> "Azerbaijan"
-    CuisineType.ITALIAN -> "Italy"
-    CuisineType.CHINESE -> "China"
-    CuisineType.AMERICAN -> "America"
-    CuisineType.OTHER -> "Other"
+    return CuisineType.fromChoice(readLine())
 }
