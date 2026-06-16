@@ -1,3 +1,7 @@
+package service
+
+import model.Recipe
+
 class RecipeSearch {
     private val recipes: MutableList<Recipe> = mutableListOf()
 
@@ -18,6 +22,8 @@ class RecipeSearch {
     }
 
     fun search_by_name(name: String): List<Recipe> {
-        return recipes.filter { it.getName().contains(name, ignoreCase = true) }
+        return recipes.filter {
+            it.getName().contains(name, ignoreCase = true)
+        }
     }
 }

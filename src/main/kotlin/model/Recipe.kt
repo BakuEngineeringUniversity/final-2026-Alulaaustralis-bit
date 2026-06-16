@@ -1,3 +1,5 @@
+package model
+
 abstract class Recipe(
     private var name: String,
     private var ingredients: List<String>,

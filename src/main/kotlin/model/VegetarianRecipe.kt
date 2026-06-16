@@ -1,3 +1,5 @@
+package model
+
 class VegetarianRecipe(
     name: String,
     ingredients: List<String>,

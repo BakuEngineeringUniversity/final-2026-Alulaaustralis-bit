@@ -1,3 +1,7 @@
+package model
+
+import interfaces.CookingMethod
+
 class BakingRecipe(
     name: String,
     ingredients: List<String>,
